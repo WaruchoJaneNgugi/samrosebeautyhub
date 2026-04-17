@@ -6,7 +6,7 @@ import './App.css'
 
 const WHATSAPP_NUMBER = '254706195219'
 
-type Service = { id: string; name: string; price: number; duration: string; category: string }
+type Service = { id: string; name: string; price: number; duration: string; category: string; imageUrl?: string }
 type Category = { id: string; name: string }
 
 const REVIEWS = [
@@ -89,6 +89,7 @@ export default function App() {
           const isSelected = !!selected.find(s => s.id === service.id)
           return (
             <div key={service.id} className={`card glass ${isSelected ? 'selected' : ''}`}>
+              {service.imageUrl && <img src={service.imageUrl} alt={service.name} style={{ width: '100%', height: '150px', objectFit: 'cover', borderRadius: '8px 8px 0 0' }} />}
               <div>
                 <h3>{service.name}</h3>
                 <span className="duration">⏱ {service.duration}</span>

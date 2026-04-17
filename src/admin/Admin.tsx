@@ -8,7 +8,7 @@ import { db, storage } from '../firebase'
 import './Admin.css'
 
 type Category = { id: string; name: string }
-type Service = { id: string; name: string; price: number; duration: string; category: string }
+type Service = { id: string; name: string; price: number; duration: string; category: string; imageUrl?: string }
 
 export default function Admin() {
   const [categories, setCategories] = useState<Category[]>([])
@@ -16,9 +16,11 @@ export default function Admin() {
   const [heroUrl, setHeroUrl] = useState('')
   const [catName, setCatName] = useState('')
   const [svc, setSvc] = useState({ name: '', price: '', duration: '', category: '' })
+  const [svcImage, setSvcImage] = useState<File | null>(null)
   const [uploading, setUploading] = useState(false)
   const [tab, setTab] = useState<'categories' | 'services' | 'hero'>('categories')
   const fileRef = useRef<HTMLInputElement>(null)
+  const svcFileRef = useRef<HTMLInputElement>(null)
 
   // Live listeners
   useEffect(() => {
@@ -44,8 +46,17 @@ export default function Admin() {
 
   const addService = async () => {
     if (!svc.name || !svc.price || !svc.category) return
-    await addDoc(collection(db, 'services'), { ...svc, price: Number(svc.price) })
+    setUploading(true)
+    let imageUrl = ''
+    if (svcImage) {
+      const storageRef = ref(storage, `services/${Date.now()}_${svcImage.name}`)
+      await uploadBytes(storageRef, svcImage)
+      imageUrl = await getDownloadURL(storageRef)
+    }
+    await addDoc(collection(db, 'services'), { ...svc, price: Number(svc.price), imageUrl })
     setSvc({ name: '', price: '', duration: '', category: '' })
+    setSvcImage(null)
+    setUploading(false)
   }
 
   const deleteService = (id: string) => deleteDoc(doc(db, 'services', id))
@@ -114,13 +125,22 @@ export default function Admin() {
               {categories.map(c => <option key={c.id} value={c.name}>{c.name}</option>)}
             </select>
           </div>
-          <button className="btn-gold full" onClick={addService}>Add Service</button>
+          <button className="btn-primary" onClick={() => svcFileRef.current?.click()}>
+            {svcImage ? `📷 ${svcImage.name}` : '📷 Add Image (Optional)'}
+          </button>
+          <input ref={svcFileRef} type="file" accept="image/*" style={{ display: 'none' }} onChange={e => setSvcImage(e.target.files?.[0] || null)} />
+          <button className="btn-gold full" onClick={addService} disabled={uploading}>
+            {uploading ? 'Adding...' : 'Add Service'}
+          </button>
           <ul className="item-list">
             {services.map(s => (
               <li key={s.id}>
                 <div>
-                  <strong>{s.name}</strong>
-                  <span className="meta">KSh {s.price.toLocaleString()} · {s.duration} · {s.category}</span>
+                  {s.imageUrl && <img src={s.imageUrl} alt={s.name} style={{ width: '50px', height: '50px', objectFit: 'cover', borderRadius: '4px', marginRight: '10px' }} />}
+                  <div>
+                    <strong>{s.name}</strong>
+                    <span className="meta">KSh {s.price.toLocaleString()} · {s.duration} · {s.category}</span>
+                  </div>
                 </div>
                 <button className="btn-del" onClick={() => deleteService(s.id)}>✕</button>
               </li>
