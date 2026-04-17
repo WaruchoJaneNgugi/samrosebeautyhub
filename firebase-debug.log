@@ -1,0 +1,83 @@
+[debug] [2026-04-17T10:06:37.973Z] ----------------------------------------------------------------------
+[debug] [2026-04-17T10:06:37.978Z] Command:       /home/jane-ngugi/.nvm/versions/node/v20.20.2/bin/node /usr/local/bin/firebase init
+[debug] [2026-04-17T10:06:37.979Z] CLI Version:   15.14.0
+[debug] [2026-04-17T10:06:37.979Z] Platform:      linux
+[debug] [2026-04-17T10:06:37.980Z] Node Version:  v20.20.2
+[debug] [2026-04-17T10:06:37.980Z] Time:          Fri Apr 17 2026 13:06:37 GMT+0300 (East Africa Time)
+[debug] [2026-04-17T10:06:37.980Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-04-17T10:06:37.986Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /home/jane-ngugi/samrosebeautyhub
+
+[debug] [2026-04-17T10:06:42.174Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2026-04-17T10:06:42.176Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] 
+[debug] [2026-04-17T10:07:21.410Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-04-17T10:07:21.411Z] > authorizing via signed-in user (waruchojanen@gmail.com)
+[debug] [2026-04-17T10:07:21.412Z] Checked if tokens are valid: false, expires at: 1775827563031
+[debug] [2026-04-17T10:07:21.413Z] Checked if tokens are valid: false, expires at: 1775827563031
+[debug] [2026-04-17T10:07:21.415Z] > refreshing access token with scopes: []
+[debug] [2026-04-17T10:07:21.418Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-04-17T10:07:21.419Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-04-17T10:07:21.804Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2026-04-17T10:07:21.805Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-04-17T10:07:21.821Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2026-04-17T10:07:22.552Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2026-04-17T10:07:22.552Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] 
+=== Dataconnect Setup
+[info] i  dataconnect: ensuring required API firebasedataconnect.googleapis.com is enabled... 
+[debug] [2026-04-17T10:07:25.661Z] Checked if tokens are valid: true, expires at: 1776424040805
+[debug] [2026-04-17T10:07:25.662Z] Checked if tokens are valid: true, expires at: 1776424040805
+[info] i  dataconnect: ensuring required API sqladmin.googleapis.com is enabled... 
+[debug] [2026-04-17T10:07:25.665Z] Checked if tokens are valid: true, expires at: 1776424040805
+[debug] [2026-04-17T10:07:25.666Z] Checked if tokens are valid: true, expires at: 1776424040805
+[debug] [2026-04-17T10:07:25.667Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/samrosebeatyhub/services/firebasedataconnect.googleapis.com [none]
+[debug] [2026-04-17T10:07:25.667Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/samrosebeatyhub/services/firebasedataconnect.googleapis.com  x-goog-user-project=samrosebeatyhub
+[debug] [2026-04-17T10:07:25.673Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/samrosebeatyhub/services/sqladmin.googleapis.com [none]
+[debug] [2026-04-17T10:07:25.673Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/samrosebeatyhub/services/sqladmin.googleapis.com  x-goog-user-project=samrosebeatyhub
+[debug] [2026-04-17T10:07:27.520Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/samrosebeatyhub/services/firebasedataconnect.googleapis.com 200
+[debug] [2026-04-17T10:07:27.521Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/samrosebeatyhub/services/firebasedataconnect.googleapis.com [omitted]
+[warn] ⚠  dataconnect: missing required API firebasedataconnect.googleapis.com. Enabling now... 
+[debug] [2026-04-17T10:07:27.525Z] Checked if tokens are valid: true, expires at: 1776424040805
+[debug] [2026-04-17T10:07:27.525Z] Checked if tokens are valid: true, expires at: 1776424040805
+[debug] [2026-04-17T10:07:27.526Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/samrosebeatyhub/services/firebasedataconnect.googleapis.com:enable [none]
+[debug] [2026-04-17T10:07:27.527Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/samrosebeatyhub/services/firebasedataconnect.googleapis.com:enable  x-goog-user-project=samrosebeatyhub
+[debug] [2026-04-17T10:07:27.537Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/samrosebeatyhub/services/sqladmin.googleapis.com 200
+[debug] [2026-04-17T10:07:27.538Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/samrosebeatyhub/services/sqladmin.googleapis.com [omitted]
+[warn] ⚠  dataconnect: missing required API sqladmin.googleapis.com. Enabling now... 
+[debug] [2026-04-17T10:07:27.539Z] Checked if tokens are valid: true, expires at: 1776424040805
+[debug] [2026-04-17T10:07:27.539Z] Checked if tokens are valid: true, expires at: 1776424040805
+[debug] [2026-04-17T10:07:27.540Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/samrosebeatyhub/services/sqladmin.googleapis.com:enable [none]
+[debug] [2026-04-17T10:07:27.540Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/samrosebeatyhub/services/sqladmin.googleapis.com:enable  x-goog-user-project=samrosebeatyhub
+[debug] [2026-04-17T10:07:28.357Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/samrosebeatyhub/services/sqladmin.googleapis.com:enable 200
+[debug] [2026-04-17T10:07:28.357Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/samrosebeatyhub/services/sqladmin.googleapis.com:enable [omitted]
+[debug] [2026-04-17T10:07:28.367Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/samrosebeatyhub/services/firebasedataconnect.googleapis.com:enable 200
+[debug] [2026-04-17T10:07:28.368Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/samrosebeatyhub/services/firebasedataconnect.googleapis.com:enable [omitted]
+[debug] [2026-04-17T10:07:38.391Z] Checked if tokens are valid: true, expires at: 1776424040805
+[debug] [2026-04-17T10:07:38.392Z] Checked if tokens are valid: true, expires at: 1776424040805
+[debug] [2026-04-17T10:07:38.393Z] >>> [apiv2][query] GET https://firebasedataconnect.googleapis.com/v1/projects/samrosebeatyhub/locations/-/services [none]
+[debug] [2026-04-17T10:07:40.538Z] <<< [apiv2][status] GET https://firebasedataconnect.googleapis.com/v1/projects/samrosebeatyhub/locations/-/services 200
+[debug] [2026-04-17T10:07:40.539Z] <<< [apiv2][body] GET https://firebasedataconnect.googleapis.com/v1/projects/samrosebeatyhub/locations/-/services {}
+[info] i  : ensuring required API cloudaicompanion.googleapis.com is enabled... 
+[debug] [2026-04-17T10:07:48.380Z] Checked if tokens are valid: true, expires at: 1776424040805
+[debug] [2026-04-17T10:07:48.380Z] Checked if tokens are valid: true, expires at: 1776424040805
+[debug] [2026-04-17T10:07:48.381Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/samrosebeatyhub/services/cloudaicompanion.googleapis.com [none]
+[debug] [2026-04-17T10:07:48.382Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/samrosebeatyhub/services/cloudaicompanion.googleapis.com  x-goog-user-project=samrosebeatyhub
+[debug] [2026-04-17T10:07:49.951Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/samrosebeatyhub/services/cloudaicompanion.googleapis.com 200
+[debug] [2026-04-17T10:07:49.951Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/samrosebeatyhub/services/cloudaicompanion.googleapis.com [omitted]
+[info] ✔  : required API cloudaicompanion.googleapis.com is enabled 
