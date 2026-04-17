@@ -4,7 +4,7 @@ import { db } from './firebase'
 import heroFallback from './assets/hero.png'
 import './App.css'
 
-const WHATSAPP_NUMBER = '254700000000'
+const WHATSAPP_NUMBER = '254706195219'
 
 type Service = { id: string; name: string; price: number; duration: string; category: string }
 type Category = { id: string; name: string }
